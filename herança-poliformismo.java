@@ -34,35 +34,36 @@ public class HerancaPolimorfismo {
                 manager.setSalary(5000);
                 manager.setLogin("joao");
                 manager.setPassword("123456");
+                manager.setCommision(1200);
 
                 System.out.println(manager.getCode());
                 System.out.println(manager.getSalary());
                 System.out.println(manager.getName());
                 System.out.println(manager.getLogin());
                 System.out.println(manager.getPassword());
+                System.out.println(manager.getCommmission());
 
             }
 
             
             }
-        System.out.println("===%s===/n", colaborador.getClass().getCanonicalName());
-        System.out.println(colaborador.getName());
-        System.out.println(((Manager)colaborador).getLogin());
-        System.out.println(((Manager)colaborador).getPassword());
-        System.out.println("============");
+        //System.out.println("===%s===/n", colaborador.getClass().getCanonicalName());
+        //System.out.println(colaborador.getName());
+        //System.out.println(((Manager)colaborador).getLogin());
+        //System.out.println(((Manager)colaborador).getPassword());
+        //System.out.println("============");
 
     }
 
     case Salesman -> {
         salesman.setCode("123");
-        salesman.setName("Joao");
-        salesman.setSalary(5000);
+        salesman.setName("Lucas");
+        salesman.setSalary(2800);
       
 
         System.out.println(salesman.getCode());
         System.out.println(salesman.getSalary());
         System.out.println(salesman.getName());
-        System.out.println(salesman.getLogin());
-        System.out.println(salesman.getPassword());
+        
     }
 }
