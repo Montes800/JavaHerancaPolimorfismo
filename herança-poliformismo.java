@@ -1,4 +1,4 @@
-// Classe principal
+// Classe principal. 17:49
 public class HerancaPolimorfismo {
     public static void main(String[] args) {
         // Criando um colaborador (não usado aqui, mas deixei para exemplo)
@@ -9,7 +9,7 @@ public class HerancaPolimorfismo {
      printColaborador(new Manager());
      printColaborador(new Salesman());
 
-
+// quando a classe estiver em sealed(selada) nao precisa do defaul
 
 /*
         // Definindo atributos do manager
@@ -25,7 +25,9 @@ public class HerancaPolimorfismo {
     }
 
     public static void printColaborador(colaborador colaborador) {
-        if (colaborador instanceof Manager manager)
+
+        System.out.printf("=======%s=====\n", colaborador.getClass(). getCanonicalName());
+       // if (colaborador instanceof Manager manager)
         switch (colaborador) {
             case Manager manager -> {
 
@@ -56,14 +58,16 @@ public class HerancaPolimorfismo {
     }
 
     case Salesman -> {
-        salesman.setCode("123");
+        salesman.setCode("456");
         salesman.setName("Lucas");
         salesman.setSalary(2800);
+        salesman.setPercentPerSold(10));
       
 
         System.out.println(salesman.getCode());
         System.out.println(salesman.getSalary());
         System.out.println(salesman.getName());
+        System.out.println(salesman.getPercentPerSold());
         
     }
 }
