@@ -138,7 +138,7 @@ public sealed abstract class Colaborador permits Manager, Salesman {
     /**
      * Define o salário base do colaborador.
      *
-     * @param salary O novo salário base do colaborador.'
+     * @param salary O novo salário base do colaborador.
      */
     public void setSalary(double salary) {
         this.salary = salary;
