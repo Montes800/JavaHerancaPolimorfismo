@@ -1,73 +1,64 @@
-// Classe principal. 17:49
-public class HerancaPolimorfismo {
-    public static void main(String[] args) {
-        // Criando um colaborador (não usado aqui, mas deixei para exemplo)
-       // Colaborador manager = new Manager(); // Polimorfismo: Manager é um Colaborador
+package com.example;
 
-        // Criando um manager (gerente), que herda de Colaborador
-     //   Manager manager = new Manager();
-     printColaborador(new Manager());
-     printColaborador(new Salesman());
+import domain.Manager;
+import domain.Salesman;
+import domain.Colaborador;
 
-// quando a classe estiver em sealed(selada) nao precisa do defaul
-
-/*
-        // Definindo atributos do manager
-        manager.setName("João");
-        manager.setLogin("joao");
-        manager.setPassword("123456");
-
-        // Exibindo informações
-        System.out.println(manager.getName());
-        System.out.println(manager.getLogin());
-        System.out.println(manager.getPassword());
-        */
+/**
+ * Classe principal que demonstra os conceitos de Herança e Polimorfismo.
+ */
+public class HerancaPolimorfismo {     public static void main(String[] args) {
+        // Criando instâncias de Manager e Salesman para demonstrar polimorfismo
+        printColaborador(new Manager());
+        printColaborador(new Salesman());
     }
 
-    public static void printColaborador(colaborador colaborador) {
+    /**
+     * Imprime informações detalhadas de um objeto Colaborador, demonstrando polimorfismo.
+     * Dependendo do tipo real do objeto (Manager ou Salesman), informações específicas são exibidas.
+     *
+     * @param colaborador O objeto Colaborador a ser impresso.
+     */
+    public static void printColaborador(Colaborador colaborador) {
+        System.out.printf("======== Informações do %s ========\n", colaborador.getClass().getSimpleName());
 
-        System.out.printf("=======%s=====\n", colaborador.getClass(). getCanonicalName());
-       // if (colaborador instanceof Manager manager)
-        switch (colaborador) {
-            case Manager manager -> {
+        // Utilizando pattern matching para instanceof para lidar com tipos específicos
+        if (colaborador instanceof Manager manager) {
+            // Atribuindo valores para o Manager
+            manager.setCode("MN123");
+            manager.setName("João Silva");
+            manager.setSalary(5000.00);
+            manager.setLogin("joao.silva");
+            manager.setPassword("senha123");
+            manager.setCommission(1200.00);
 
-                manager.setCode("123");
-                manager.setName("João");
-                manager.setSalary(5000);
-                manager.setLogin("joao");
-                manager.setPassword("123456");
-                manager.setCommision(1200);
+            // Exibindo informações do Manager
+            System.out.println("Código: " + manager.getCode());
+            System.out.println("Nome: " + manager.getName());
+            System.out.println("Salário Base: " + manager.getSalary());
+            System.out.println("Login: " + manager.getLogin());
+            System.out.println("Comissão: " + manager.getCommission());
+            System.out.println("Salário Total: " + manager.getFullSalary());
 
-                System.out.println(manager.getCode());
-                System.out.println(manager.getSalary());
-                System.out.println(manager.getName());
-                System.out.println(manager.getLogin());
-                System.out.println(manager.getPassword());
-                System.out.println(manager.getCommmission());
+        } else if (colaborador instanceof Salesman salesman) {
+            // Atribuindo valores para o Salesman
+            salesman.setCode("SL456");
+            salesman.setName("Lucas Souza");
+            salesman.setSalary(2800.00);
+            salesman.setPorcentPerSold(10.0);
+            salesman.setSoldAmount(10000.00);
 
-            }
+            // Exibindo informações do Salesman
+            System.out.println("Código: " + salesman.getCode());
+            System.out.println("Nome: " + salesman.getName());
+            System.out.println("Salário Base: " + salesman.getSalary());
+            System.out.println("Porcentagem por Venda: " + salesman.getPorcentPerSold() + "%");
+            System.out.println("Valor Vendido: " + salesman.getSoldAmount());
+            System.out.println("Salário Total: " + salesman.getFullSalary());
 
-            
-            }
-        //System.out.println("===%s===/n", colaborador.getClass().getCanonicalName());
-        //System.out.println(colaborador.getName());
-        //System.out.println(((Manager)colaborador).getLogin());
-        //System.out.println(((Manager)colaborador).getPassword());
-        //System.out.println("============");
-
-    }
-
-    case Salesman -> {
-        salesman.setCode("456");
-        salesman.setName("Lucas");
-        salesman.setSalary(2800);
-        salesman.setPercentPerSold(10));
-      
-
-        System.out.println(salesman.getCode());
-        System.out.println(salesman.getSalary());
-        System.out.println(salesman.getName());
-        System.out.println(salesman.getPercentPerSold());
-        
+        } else {
+            System.out.println("Tipo de colaborador não reconhecido.");
+        }
+        System.out.println("====================================\n");
     }
 }
