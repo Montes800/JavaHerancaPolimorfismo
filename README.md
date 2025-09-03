@@ -1,6 +1,6 @@
 ## 👨‍💻 Projeto de Herança e Polimorfismo em Java
 Este documento resume os principais conceitos de Programação Orientada a Objetos (POO) 
-que foram aplicados e demonstrados no projeto, focando em como esses pilares se manifestam no código.
+que foram aplicados e demonstrados no projeto, focando em como esses pilares se manifestam no código. Estudo feito pelo curso da DIO.me
 
 # Conceitos Abordados neste Projeto
 Herança 🧬: Utilizada para criar uma hierarquia de classes, onde Manager e Salesman herdam de Colaborador, permitindo
